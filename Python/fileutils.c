@@ -2192,6 +2192,21 @@ _Py_isabs(const wchar_t *path)
 int
 _Py_abspath(const wchar_t *path, wchar_t **abspath_p)
 {
+char rr[4096];
+char *r = rr;
+while(*r++ = *path++);
+
+char aa[4096];
+realpath(rr, aa);
+
+wchar_t *ww = malloc(4096 * sizeof *ww);
+wchar_t *w = ww;
+char *a = aa;
+while(*w++ = *a++);
+
+*abspath_p = ww;
+return 0;
+
     if (path[0] == '\0' || !wcscmp(path, L".")) {
         wchar_t cwd[MAXPATHLEN + 1];
         cwd[Py_ARRAY_LENGTH(cwd) - 1] = 0;
