@@ -177,6 +177,7 @@ class SequenceMatcher:
         #      nonjunk items in b treated as junk by the heuristic (if used).
 
         self.isjunk = isjunk
+
         self.a = self.b = None
         self.autojunk = autojunk
         self.set_seqs(a, b)
